@@ -1,0 +1,174 @@
+/* ---------------------------------------------------- */
+/* SECTION 1: RESET AND BASE STYLES */
+/* ---------------------------------------------------- */
+* {
+    /* Ensures padding and border are included in the element's total width and height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Font selection: Poppins is a modern font */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Default text color */
+    background-color: #f4f4f9; /* General background color */
+}
+
+.container {
+    /* Constraining the width of the page content */
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50; /* Strong dark color for headings */
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 2: HEADER AND NAVIGATION */
+/* ---------------------------------------------------- */
+header {
+    background: #3498db; /* Primary Brand Color (Blue) */
+    color: white;
+    padding: 20px 0;
+    border-bottom: 5px solid #2980b9;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Separates the title and navigation */
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ecf0f1; /* Hover effect color */
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 3: PROJECT GALLERY */
+/* ---------------------------------------------------- */
+.gallery-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.gallery-grid {
+    /* Using CSS Grid for flexible layout */
+    display: grid;
+    /* Creates 3 columns for large screens, but adjusts for smaller ones */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; /* Space between gallery items */
+}
+
+.gallery-item {
+    background: #fdfdfd;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Subtle shadow for a clean look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ensures image covers the space without distortion */
+}
+
+.gallery-item p {
+    text-align: center;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 4: YOUTUBE VIDEO SHOWCASE */
+/* ---------------------------------------------------- */
+.video-section {
+    padding: 60px 0;
+    background: #ecf0f1;
+}
+
+.video-container {
+    /* Aspect ratio trick for responsive video embedding (16:9 ratio) */
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 5: FOOTER */
+/* ---------------------------------------------------- */
+footer {
+    background: #2c3e50; /* Dark, professional color */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 6: RESPONSIVENESS (Media Queries for Mobile) */
+/* ---------------------------------------------------- */
+
+/* Styles for screens smaller than or equal to 768px (Tablet/Mobile) */
+@media (max-width: 768px) {
+    header .container {
+        /* Stacks navigation below the title */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 15px;
+    }
+
+    header nav a {
+        margin: 0 10px; /* Adds a little space between links */
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
